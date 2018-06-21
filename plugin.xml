@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-android-utilities" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>androidUtilities</name>
+  <js-module name="androidUtilities" src="www/androidUtilities.js">
+    <clobbers target="cordova.plugins.androidUtilities" />
+    </js-module>
+    <platform name="android">
+      <lib-file src="src/android/libs/MorphoSmart_SDK_6.15.3.0.jar"/>
+      <config-file parent="/*" target="res/xml/config.xml">
+        <feature name="androidUtilities">
+          <param name="android-package" value="cordova.plugin.android.utilities.androidUtilities" />
+        </feature>
+      </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      </config-file>
+      <source-file src="src/android/androidUtilities.java" target-dir="src/cordova.plugin.android.utilities" />
+      <source-file src="src/android/AuthBfdCap.java" target-dir="src/cordova.plugin.android.utilities" />
+      <source-file src="src/android/MorphoTabletFPSensorDevice.java" target-dir="src/cordova.plugin.android.utilities" />
+       <source-file src="src/android/libs/armeabi/libMSO100.so" target-dir="libs/armeabi" />
+       <source-file src="src/android/libs/armeabi/libNativeMorphoSmartSDK_6.15.3.0.so" target-dir="libs/armeabi" />
+    </platform>
+  </plugin>
