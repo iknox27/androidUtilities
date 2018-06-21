@@ -34,4 +34,3 @@ androidUtilities.install = function() {
 };
 
 cordova.addConstructor(androidUtilities.install);
-
